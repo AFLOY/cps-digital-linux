@@ -1,0 +1,6 @@
+# Must sort before 73-seat-late.rules, which turns the uaccess tag into an ACL.
+# CPS-Digital USB displays (VID 1a2c, PIDs 444d/4185/4887): let logged-in users
+# open the hidraw node so cps_digital.py can run without root.
+KERNEL=="hidraw*", ATTRS{idVendor}=="1a2c", ATTRS{idProduct}=="444d", TAG+="uaccess"
+KERNEL=="hidraw*", ATTRS{idVendor}=="1a2c", ATTRS{idProduct}=="4185", TAG+="uaccess"
+KERNEL=="hidraw*", ATTRS{idVendor}=="1a2c", ATTRS{idProduct}=="4887", TAG+="uaccess"

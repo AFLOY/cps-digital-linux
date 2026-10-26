@@ -1,0 +1,11 @@
+[Unit]
+Description=CPS-Digital USB temperature display
+
+[Service]
+EnvironmentFile=-%h/.config/cps-digital.conf
+ExecStart=%h/.local/bin/cps-digital $CPS_DIGITAL_OPTS
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
